@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherNow | Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main class="dashboard">
+        <header class="header">
+            <a href="#" class="logo">Weather<span>Now.</span></a>
+            <p>REAL-TIME WEATHER DASHBOARD</p>
+        </header>
+
+        <section class="search-section">
+            <h1>Weather at a glance.</h1>
+            <p class="subtitle">Find out what's happening outside.</p>
+
+            <form id="searchForm" class="search-box">
+                <span class="search-icon">⌕</span>
+                <input
+                    type="text"
+                    id="cityInput"
+                    placeholder="Search for a city..."
+                    aria-label="Enter city name"
+                    required
+                >
+                <button type="submit" id="searchBtn">Search</button>
+            </form>
+        </section>
+
+        <div id="statusMessage" class="status-message" role="status">
+            Loading weather data...
+        </div>
+
+        <section id="weatherContent" class="weather-content" hidden>
+
+            <div class="weather-main">
+                <div class="location-info">
+                    <p class="eyebrow">CURRENT WEATHER</p>
+                    <h2 id="cityName">Bengaluru</h2>
+                    <p id="countryName" class="country"></p>
+                    <p id="weatherDate" class="date"></p>
+                </div>
+
+                <div class="temperature-info">
+                    <span id="weatherIcon" class="weather-icon">☀️</span>
+                    <h2><span id="temperature">--</span><span class="degree">°C</span></h2>
+                    <p id="weatherDescription">Clear sky</p>
+                </div>
+            </div>
+
+            <h3 class="metrics-heading">Weather Details</h3>
+
+            <div class="metrics-grid">
+
+                <article class="metric-card">
+                    <div class="metric-icon">🌡️</div>
+                    <p>Feels Like</p>
+                    <h3><span id="feelsLike">--</span>°C</h3>
+                </article>
+
+                <article class="metric-card">
+                    <div class="metric-icon">💧</div>
+                    <p>Humidity</p>
+                    <h3><span id="humidity">--</span>%</h3>
+                </article>
+
+                <article class="metric-card">
+                    <div class="metric-icon">💨</div>
+                    <p>Wind Speed</p>
+                    <h3><span id="windSpeed">--</span> <small>km/h</small></h3>
+                </article>
+
+            </div>
+
+            <p id="lastUpdated" class="last-updated"></p>
+        </section>
+
+        <footer>
+            <p>Weather data powered by <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a></p>
+            <p>Built with HTML, CSS & JavaScript</p>
+        </footer>
+    </main>
+
+</body>
+</html>
